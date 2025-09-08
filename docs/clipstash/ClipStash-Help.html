@@ -170,6 +170,54 @@
             margin-bottom: 5px;
         }
         
+        .iphone-frame {
+            background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+            border-radius: 35px;
+            padding: 8px;
+            box-shadow: 
+                0 0 0 2px #4a4a4a,
+                0 20px 50px rgba(0, 0, 0, 0.3),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            max-width: 420px;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .iphone-frame::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 28px;
+            background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+            border-radius: 0 0 20px 20px;
+            z-index: 2;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .iphone-frame::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+            z-index: 3;
+        }
+        
+        .iphone-frame img {
+            width: 100%;
+            border-radius: 27px;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -186,6 +234,28 @@
             .feature-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .iphone-frame {
+                max-width: 320px;
+                border-radius: 28px;
+                padding: 6px;
+            }
+            
+            .iphone-frame::before {
+                width: 120px;
+                height: 22px;
+                border-radius: 0 0 15px 15px;
+            }
+            
+            .iphone-frame::after {
+                width: 50px;
+                height: 5px;
+                top: 12px;
+            }
+            
+            .iphone-frame img {
+                border-radius: 22px;
+            }
         }
     </style>
 </head>
@@ -201,10 +271,10 @@
             <h2>🚀 Getting Started</h2>
             
             <h3>What is ClipStash?</h3>
-            <p>ClipStash is a powerful clipboard manager for iPhone and iPad that automatically captures and organizes everything you copy. Whether it's text, images, or other content, ClipStash keeps track of it all with intelligent duplicate detection and powerful organization features.</p>
+            <p>ClipStash is a powerful clipboard manager for iPhone and iPad that helps you save and organize everything you copy. Whether it's text or images, ClipStash keeps track of it all with intelligent duplicate detection and powerful organization features.</p>
             
-            <div class="screenshot-placeholder">
-                Screenshot: Main app interface showing clip list
+            <div class="iphone-frame">
+                <img src="screenshots/MainAppInterfaceShowingClipList.png" alt="ClipStash main interface showing a list of saved clips including market data charts, text snippets, and images with timestamps and titles">
             </div>
             
             <h3>Key Benefits</h3>
@@ -232,28 +302,25 @@
             <h2>📝 Working with Clips</h2>
             
             <h3>Adding Clips</h3>
-            <p>There are several ways to add content to ClipStash:</p>
+            <p>To add content to ClipStash:</p>
             <ul>
-                <li><strong>Manual Import:</strong> Tap the blue + button to import whatever is currently on your clipboard</li>
-                <li><strong>Automatic Detection:</strong> ClipStash can automatically detect new clipboard content (when enabled)</li>
-                <li><strong>Smart Duplicates:</strong> The app prevents duplicate content from being added</li>
+                <li>Copy any text or image to your device's clipboard</li>
+                <li>Open ClipStash and tap the blue + button</li>
+                <li>Your clipboard content will be saved as a new clip</li>
             </ul>
-            
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Floating + button and import process
-            </div>
+            <p><strong>Smart Duplicate Detection:</strong> ClipStash automatically prevents duplicate content from being added to your collection.</p>
             
             <h3>Text Clips</h3>
             <p>Text clips display rich information about your copied text:</p>
             <ul>
                 <li><strong>Word Count:</strong> See exactly how many words are in your text</li>
                 <li><strong>Character Count:</strong> Track character length for social media posts</li>
-                <li><strong>Preview:</strong> First 50 characters are shown in the list view</li>
+                <li><strong>Preview:</strong> A preview of your text is shown in the list view</li>
                 <li><strong>Full Content:</strong> Tap to view complete text in detail view</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Text clip detail view showing word/character count
+            <div class="iphone-frame">
+                <img src="screenshots/TextClipDetailView.png" alt="Text clip detail view showing word count, character count, and full content with editing and sharing options">
             </div>
             
             <h3>Image Clips</h3>
@@ -262,11 +329,10 @@
                 <li><strong>Thumbnail Preview:</strong> See image previews in the list</li>
                 <li><strong>Full Resolution:</strong> View full-size images in detail view</li>
                 <li><strong>Share Integration:</strong> Easily share images to other apps</li>
-                <li><strong>Metadata:</strong> Track image dimensions and file size</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Image clip in list view and detail view
+            <div class="iphone-frame">
+                <img src="screenshots/ImageClipDetailView.png" alt="Image clip detail view showing full-resolution image with sharing, copying, and favoriting options">
             </div>
         </div>
 
@@ -282,8 +348,8 @@
                 <li><strong>Case Insensitive:</strong> Search works regardless of capitalization</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Search bar with active search results
+            <div class="iphone-frame">
+                <img src="screenshots/SearchBarWithActiveResults.png" alt="Search functionality showing active search results filtering clips in real-time">
             </div>
             
             <h3>Filtering Options</h3>
@@ -295,8 +361,8 @@
                 <li><strong>Favorites:</strong> See clips you've marked with stars</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Navigation drawer showing filter options
+            <div class="iphone-frame">
+                <img src="screenshots/NavigationDrawerShowingFilterOptions.png" alt="Navigation drawer displaying filter options including All Clips, Text Only, Images Only, and Favorites">
             </div>
             
             <h3>Favorites System</h3>
@@ -334,8 +400,10 @@
                 </div>
             </div>
             
-            <div class="screenshot-placeholder">
-                Screenshot: Clip detail view showing all available actions in toolbar
+            <p><strong>Note:</strong> ClipStash preserves your original clip content exactly as copied. While you can add custom titles for better organization, the actual clip content (text or images) cannot be modified after saving.</p>
+            
+            <div class="iphone-frame">
+                <img src="screenshots/ClipDetailViewShowingAvailableActions.png" alt="Clip detail view showing toolbar with title editing, sharing, copying, and favorite toggle actions">
             </div>
             
             <h3>Selection Mode</h3>
@@ -345,11 +413,10 @@
                 <li><strong>Choose Clips:</strong> Tap clips to select/deselect them</li>
                 <li><strong>Select All:</strong> Toggle all clips with one tap</li>
                 <li><strong>Bulk Delete:</strong> Remove multiple clips simultaneously</li>
-                <li><strong>Selection Counter:</strong> See how many clips are selected</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: Selection mode with multiple clips selected
+            <div class="iphone-frame">
+                <img src="screenshots/SelectionMode.png" alt="Selection mode interface showing multiple clips selected with checkmarks and bulk delete options">
             </div>
             
             <h3>Dark Mode Support</h3>
@@ -361,8 +428,8 @@
                 <li><strong>Consistent Experience:</strong> Maintains usability in all lighting conditions</li>
             </ul>
             
-            <div class="screenshot-placeholder screenshot-small">
-                Screenshot: App in dark mode showing adaptive colors
+            <div class="iphone-frame">
+                <img src="screenshots/DarkMode.png" alt="ClipStash app interface in dark mode showing adaptive colors and enhanced contrast">
             </div>
         </div>
 
@@ -373,14 +440,14 @@
             <p>Access the slide-out menu by tapping the hamburger icon (☰):</p>
             <ul>
                 <li><strong>Filter Options:</strong> All Clips, Text Only, Images Only, Favorites</li>
-                <li><strong>Help:</strong> Opens GitHub blog for additional resources and updates</li>
+                <li><strong>Help:</strong> Access comprehensive help documentation and user guide</li>
                 <li><strong>Send Feedback:</strong> Email us directly with questions or suggestions</li>
             </ul>
             
             <div class="contact-info">
                 <h4>📧 Contact Information</h4>
                 <p><strong>Feedback Email:</strong> clipboardstash@gmail.com</p>
-                <p><strong>Help Resources:</strong> <a href="https://github.blog/" target="_blank">GitHub Blog</a></p>
+                <p><strong>Help Resources:</strong> <a href="https://utility-apps-ios.github.io/docs/clipstash/ClipStash-Help.html" target="_blank">ClipStash Help Guide</a></p>
                 <p>We'd love to hear from you! Send us your questions, suggestions, or just let us know how you're using ClipStash.</p>
             </div>
             
@@ -431,7 +498,7 @@
             <h3>Troubleshooting</h3>
             
             <h4>❓ "Nothing to add" message</h4>
-            <p>This appears when your clipboard is empty. Copy something first, then tap the + button.</p>
+            <p>This appears when your clipboard is empty. Please copy some text or an image, then tap the + button to save it to ClipStash.</p>
             
             <h4>❓ Duplicate clips not being prevented</h4>
             <p>ClipStash uses content-based hash detection. Very similar but not identical content may still be added as separate clips.</p>
@@ -448,27 +515,10 @@
             </div>
         </div>
 
-        <div class="section">
-            <h2>🆕 Recent Updates</h2>
-            
-            <h3>Latest Features</h3>
-            <ul>
-                <li><strong>Word & Character Count:</strong> Text clips now show detailed statistics</li>
-                <li><strong>Enhanced Sharing:</strong> Share clips to any iOS app that supports the content type</li>
-                <li><strong>Improved Dark Mode:</strong> Better contrast and visual hierarchy</li>
-                <li><strong>iPad Optimization:</strong> Enhanced layout for larger screens</li>
-                <li><strong>Smart Navigation:</strong> Help and feedback links now functional</li>
-            </ul>
-            
-            <h3>Coming Soon</h3>
-            <div class="highlight">
-                <p>We're always working on improvements! Check the help resources for the latest updates and feature announcements.</p>
-            </div>
-        </div>
 
         <footer style="text-align: center; margin-top: 40px; padding: 20px; color: #666;">
             <p>ClipStash - Organize your clipboard like never before</p>
-            <p style="margin-top: 10px;">Need help? Email us at <strong>clipboardstash@gmail.com</strong></p>
+            <p style="margin-top: 10px;">Have feedback? Email us at <strong>clipboardstash@gmail.com</strong></p>
         </footer>
     </div>
 </body>
