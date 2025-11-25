@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - CharadeQuest</title>
+    <style>
+        :root {
+            --primary-color: #4D9999;
+            --accent-color: #FFB366;
+            --text-color: #333333;
+            --background-color: #FDFAF0;
+            --card-background: #FFFFFF;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .app-name {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .card {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .step-list {
+            list-style: none;
+            padding-left: 0;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 16px;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, rgba(77, 153, 153, 0.1), rgba(255, 179, 102, 0.1));
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: var(--text-color);
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(77, 153, 153, 0.15), rgba(255, 179, 102, 0.15));
+            border-left: 4px solid var(--accent-color);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+        }
+
+        .tip-label {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .gesture-demo {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .gesture-item {
+            text-align: center;
+        }
+
+        .gesture-icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .gesture-label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .gesture-action {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .contact-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: transparent;
+            color: #5FB5B5;
+            padding: 14px 28px;
+            border: 3px solid #5FB5B5;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #5FB5B5;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-color);
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 16px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            .gesture-demo {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">
+                <img src="./images/FunCharadesForEveryone.png" alt="CharadeQuest">
+            </div>
+            <h1>Help & Support</h1>
+            <p class="app-name">CharadeQuest - Fun Charades for Everyone!</p>
+        </header>
+
+        <div class="card">
+            <h2>About CharadeQuest</h2>
+            <p>CharadeQuest is the ultimate charades game for family and friends! Gather your group, pick a category, and see how many words you can guess before time runs out.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📁</div>
+                    <h4>Multiple Categories</h4>
+                    <p>Animals, Movies, Sports & more</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Difficulty Levels</h4>
+                    <p>Kids, Easy, Medium, Hard</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✏️</div>
+                    <h4>Custom Categories</h4>
+                    <p>Create your own word lists</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📴</div>
+                    <h4>Works Offline</h4>
+                    <p>No internet required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>How to Play</h2>
+            <ol class="step-list">
+                <li><strong>Choose a Category</strong> - Pick from built-in categories organized by difficulty, or select one of your custom categories.</li>
+                <li><strong>Set the Timer</strong> - Choose your round duration: 30, 60, 90, or 120 seconds.</li>
+                <li><strong>Hold to Forehead</strong> - Hold your device to your forehead with the screen facing your friends so they can see the word.</li>
+                <li><strong>Act It Out</strong> - Your friends act out, describe, or give clues for the word without saying it!</li>
+                <li><strong>Tilt to Answer</strong> - When you guess correctly, tilt DOWN. To skip, tilt UP.</li>
+                <li><strong>See Your Score</strong> - When time's up, review how many you got right!</li>
+            </ol>
+
+            <div class="gesture-demo">
+                <div class="gesture-item">
+                    <div class="gesture-icon">⬇️</div>
+                    <div class="gesture-label">Tilt Down</div>
+                    <div class="gesture-action">= Correct!</div>
+                </div>
+                <div class="gesture-item">
+                    <div class="gesture-icon">⬆️</div>
+                    <div class="gesture-label">Tilt Up</div>
+                    <div class="gesture-action">= Skip</div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <p><span class="tip-label">💡 Tip:</span> You can also use the on-screen buttons instead of tilting! Disable gestures in Settings if you prefer tapping.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p class="faq-question">How do I create my own category?</p>
+                <p class="faq-answer">Go to Categories → My Categories tab → tap "Add Category". Enter a name and add your custom words one by one.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Can I edit or delete my custom categories?</p>
+                <p class="faq-answer">Yes! Tap on any custom category to view it, then tap "Edit Word List" to add or remove words. You can also delete the entire category from the edit screen.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">How do I mark a category as favorite?</p>
+                <p class="faq-answer">Tap the star icon next to any category to mark it as a favorite. Favorites appear at the top of your category selection for quick access.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">The tilt gestures aren't working. What should I do?</p>
+                <p class="faq-answer">Make sure gestures are enabled in Settings. If they still don't work, you can use the on-screen Correct and Skip buttons instead.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Can I pause the game?</p>
+                <p class="faq-answer">Yes! Tap the pause button in the center of the screen during gameplay to pause the timer. The word will be hidden while paused.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Does the app work without internet?</p>
+                <p class="faq-answer">Yes! CharadeQuest works 100% offline. All categories and your custom content are stored on your device.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Is the app safe for kids?</p>
+                <p class="faq-answer">Absolutely! All built-in word lists are curated to be family-friendly and appropriate for all ages. We have a special "Kids" difficulty level with simple, child-appropriate words.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Why is there no sound on my iPad?</p>
+                <p class="faq-answer">Make sure your device isn't in silent mode and the volume is turned up. Also check that Sound Effects are enabled in the app's Settings.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">What happened to my custom categories after updating?</p>
+                <p class="faq-answer">Custom categories are stored locally on your device and should persist through updates. If you deleted and reinstalled the app, local data would be lost. We recommend noting down important custom words.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Troubleshooting</h2>
+
+            <h3>App is running slowly</h3>
+            <p>Try closing other apps running in the background and restart CharadeQuest.</p>
+
+            <h3>Gestures not responding correctly</h3>
+            <ul>
+                <li>Make sure you're holding the device steady before tilting</li>
+                <li>Tilt decisively - a quick, clear tilt works best</li>
+                <li>If issues persist, use the on-screen buttons instead (disable gestures in Settings)</li>
+            </ul>
+
+            <h3>Sound not playing</h3>
+            <ul>
+                <li>Check that your device is not in silent mode</li>
+                <li>Ensure volume is turned up</li>
+                <li>Verify Sound Effects are enabled in app Settings</li>
+            </ul>
+
+            <h3>App crashes or freezes</h3>
+            <ul>
+                <li>Force close the app and reopen it</li>
+                <li>Restart your device</li>
+                <li>Make sure you have the latest version from the App Store</li>
+            </ul>
+        </div>
+
+        <div class="card contact-section">
+            <h2>Contact Us</h2>
+            <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you!</p>
+            <a href="mailto:clipboardstash@gmail.com" class="contact-button">Send us an Email</a>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">clipboardstash@gmail.com</p>
+            <p style="margin-top: 24px; font-size: 0.95rem;">If you enjoy CharadeQuest, we would really appreciate it if you could leave us a review on the App Store!</p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </nav>
+
+        <footer>
+            <p>&copy; 2024 CharadeQuest. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
