@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - AMC Math Practice</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FDFAF0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #007AFF;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #007AFF;
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #007AFF;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.1em;
+            margin: 16px 0 8px 0;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+            margin: 12px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        .contact-box {
+            background-color: #007AFF;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .email-button {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .email-button:hover {
+            background: #0066DD;
+        }
+
+        .color-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .color-gray { background-color: #8e8e93; }
+        .color-blue { background-color: #007AFF; }
+        .color-orange { background-color: #FF9500; }
+        .color-green { background-color: #34C759; }
+        .color-yellow { background-color: #FFCC00; }
+        .color-red { background-color: #FF3B30; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            section {
+                padding: 16px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AMC Math Practice</h1>
+        <p>Help & Support</p>
+    </header>
+
+    <section>
+        <h2>Getting Started</h2>
+        <p>AMC Math Practice helps you prepare for the American Mathematics Competition (AMC 8, 10, and 12) with real past problems and detailed solutions.</p>
+        <p>The app offers two main modes:</p>
+        <ul>
+            <li><strong>Test Mode</strong> - Simulate real test conditions with a timer</li>
+            <li><strong>Review Mode</strong> - Practice at your own pace with immediate feedback</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Using Test Mode</h2>
+        <p>Test Mode simulates actual AMC testing conditions to help you practice time management.</p>
+
+        <h3>Starting a Test</h3>
+        <ul>
+            <li>Select your desired test (AMC 8, 10, or 12) and year</li>
+            <li>Set a custom duration using the time picker (or use the default)</li>
+            <li>Tap "Start Test" to begin</li>
+        </ul>
+
+        <h3>During the Test</h3>
+        <ul>
+            <li>The timer displays remaining time at the top</li>
+            <li>Timer turns red when 5 minutes or less remain</li>
+            <li>Use Pause/Resume to take breaks if needed</li>
+            <li>Answer by tapping A, B, C, D, or E</li>
+            <li>Tap "End Test" when you're finished</li>
+        </ul>
+
+        <h3>After the Test</h3>
+        <p>View detailed results showing your score, time spent on each problem, and access to solutions.</p>
+    </section>
+
+    <section>
+        <h2>Using Review Mode</h2>
+        <p>Review Mode is perfect for focused practice without time pressure.</p>
+        <ul>
+            <li>No time limit - take as long as you need</li>
+            <li>Get immediate feedback after each answer</li>
+            <li>Access the solution for every problem</li>
+            <li>Great for learning new problem-solving techniques</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Navigation Tips</h2>
+
+        <h3>Moving Between Problems</h3>
+        <ul>
+            <li>Use <strong>Next</strong> and <strong>Previous</strong> buttons to move one problem at a time</li>
+            <li>Tap the <strong>Grid</strong> icon to see all problems and jump to any one</li>
+        </ul>
+
+        <h3>Problem Status Colors</h3>
+        <ul>
+            <li><span class="color-indicator color-gray"></span><strong>Gray</strong> - Unanswered</li>
+            <li><span class="color-indicator color-blue"></span><strong>Blue</strong> - Answered</li>
+            <li><span class="color-indicator color-orange"></span><strong>Orange border</strong> - Flagged for review</li>
+        </ul>
+
+        <h3>Flagging Problems</h3>
+        <p>Tap the flag icon to mark problems you want to revisit. Flagged problems show an orange border in the grid view.</p>
+
+        <div class="highlight">
+            <strong>iPad Keyboard Shortcuts</strong><br>
+            Use arrow keys (← →) to navigate between problems. Press A, B, C, D, or E to quickly select an answer.
+        </div>
+    </section>
+
+    <section>
+        <h2>Understanding Results</h2>
+
+        <h3>Score Summary</h3>
+        <p>After completing a test, you'll see:</p>
+        <ul>
+            <li>Total score and percentage</li>
+            <li>Number of correct, wrong, and blank answers</li>
+            <li>Total time spent</li>
+        </ul>
+
+        <h3>Problem-by-Problem Breakdown</h3>
+        <p>The results table shows each problem with:</p>
+        <ul>
+            <li>Your answer vs. the correct answer</li>
+            <li>Time spent on each problem</li>
+            <li>Tap the eye icon to view the problem and its solution</li>
+        </ul>
+
+        <h3>Time Color Coding</h3>
+        <ul>
+            <li><span class="color-indicator color-green"></span><strong>Green</strong> - Quick (good pace)</li>
+            <li><span class="color-indicator color-yellow"></span><strong>Yellow</strong> - Moderate time</li>
+            <li><span class="color-indicator color-red"></span><strong>Red</strong> - Took longer than average</li>
+        </ul>
+
+        <p>Tap any column header to sort the results by that column.</p>
+    </section>
+
+    <section>
+        <h2>Test History</h2>
+        <p>Access your past tests from the History tab on the main screen.</p>
+        <ul>
+            <li>View a summary of all completed tests</li>
+            <li>Tap any test to see full details and review problems</li>
+            <li>Swipe left on a test to delete it</li>
+            <li>Use the trash icon to clear all history</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <p class="faq-question">How is my score calculated?</p>
+            <p class="faq-answer">The app uses official AMC scoring rules:</p>
+            <ul class="faq-answer">
+                <li><strong>AMC 8:</strong> 1 point per correct answer, 0 for blank or wrong. Max score: 25. No penalty for guessing.</li>
+                <li><strong>AMC 10/12:</strong> 6 points per correct answer, 1.5 points for blank, 0 for wrong. Max score: 150. Since leaving a question blank earns 1.5 points, there's a strategic penalty for guessing incorrectly.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Can I change the test duration?</p>
+            <p class="faq-answer">Yes! Before starting a test, you can set any custom duration using the time picker. This lets you practice with shorter or longer time limits as needed.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Where do the problems and solutions come from?</p>
+            <p class="faq-answer">Problems are from official past AMC competitions, copyrighted by the Mathematical Association of America (MAA). Solutions are sourced from the Art of Problem Solving (AoPS) Wiki, available under Creative Commons BY-SA license.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Is my data stored online?</p>
+            <p class="faq-answer">No. All your test history and results are stored locally on your device only. Nothing is uploaded to any server, and no account is required.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Can I use this app offline?</p>
+            <p class="faq-answer">The problems work offline, but viewing solutions requires an internet connection to load from the AoPS Wiki.</p>
+        </div>
+    </section>
+
+    <section class="contact-box">
+        <h2>Contact Us</h2>
+        <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you!</p>
+        <a href="mailto:utility.ios.apps+amc-math-practice@gmail.com?subject=AMC%20Math%20Practice%20-%20Support%20Request" class="email-button">Email Support</a>
+        <p style="margin-top: 16px; font-size: 0.9em; opacity: 0.9;">When reporting a bug, please include what you were doing when it happened and your device model if possible.</p>
+    </section>
+
+    <footer>
+        <p>AMC Math Practice</p>
+        <p>AMC problems © Mathematical Association of America</p>
+        <p>Solutions via AoPS Wiki (CC BY-SA)</p>
+    </footer>
+</body>
+</html>
